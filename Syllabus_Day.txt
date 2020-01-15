@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-01-13T11:11:01-06:00
+
+====== Syllabus Day ======
+Created Monday 13 January 2020
+
+Course has 3 parts:
+* R
+* Theory
+* Concepts
+
+Two types of variables:
+* Qualitative
+	* groups (categories)
+* Quantitative
+	* numbers / emprical

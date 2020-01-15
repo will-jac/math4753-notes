@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-01-13T11:10:41-06:00
+
+====== Home ======
+Created Monday 13 January 2020
+
+[[Syllabus Day]]
+[[R]]
