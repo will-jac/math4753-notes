@@ -1,0 +1,80 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-01-22T10:33:59-06:00
+
+====== Ch1,2 ======
+Created Wednesday 22 January 2020
+
+====== Population vs Sample ======
+* Population is what we really want
+* Very hard to get information about it
+	* one strategy: poll the entire population (census)
+		* doesn't work very well
+	* Another: math!
+		* glean information about the population
+
+== Population ==
+* parameters
+	* greek symbols, eg: μ σ π
+
+== Sample ==
+* Generate calculations from the sample (eg mean)
+	* functions of the data
+	* Value determined by the data (ie quality of sample)
+	* these are known as **statistics**
+	* They (can) **estimate population parameters**
+		* eg: \hat{μ} = \bar{y}
+		* eg: \hat{σ^{2}} = s^{2}  
+	* english symbols, eg: \bar{y}
+
+===== Unbiased Estimator =====
+When the expected value of the estimator is what I'm trying to estimate:
+E(\hat{ μ }) = μ
+
+For sigma squared, the unbiased estimator is the **n - 1**
+Unbiased:
+s^{2} = Σ (x_{i} - \bar{x})^{2} / (n - 1) = \hat{ σ^{2} }
+\bar{x} = Σ x_{i} / n = \hat{ μ }
+
+====== z Transformation ======
+
+{{.\equation.png?type=equation}}
+
+Meaning:
+* Unitless (based on s.d.)
+	* they just divide out, because s.d. is in the units of the measurement
+* number of standard deviations it is away from the mean
+	* **Statistical Distance**
+
+{{.\equation001.png?type=equation}}
+* z can be positive or negative
+
+===== Proofs =====
+
+== mean(z) = 0 ==
+
+{{.\equation002.png?type=equation}} by definition
+{{.\equation003.png?type=equation}}
+
+Therefore:
+{{.\equation004.png?type=equation}}
+
+== variance(z) = 1 ==
+
+{{.\equation005.png?type=equation}} by definition
+{{.\equation006.png?type=equation}}
+
+====== Empircal Rule ======
+
+\bar{x}, s^2 are point estimates
+
+**Assumptions:**
+* Unimodal distribution (one hump)
+* Symmetrical about the mode (looks 'normal', eg one side reflects onto the other about the 'hump')
+
+**Then:**
+* approx. 68% of the distribution lies within 1 s.d. of the mean
+* approx. 95% of the distribution lies within 2 s.d. of the mean
+* approx. 99% of the distribution lies within 3 s.d. of the mean
+
+====== Chebychev Rule ======
