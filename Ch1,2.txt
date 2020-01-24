@@ -78,3 +78,29 @@ Therefore:
 * approx. 99% of the distribution lies within 3 s.d. of the mean
 
 ====== Chebychev Rule ======
+
+**Assumptions:**
+None
+**Then:**
+At least **1 - 1/k^2** of the distribution will lie within **k** standard deviations of the mean
+Proof:
+{{.\chebyshev.png?width=500}}
+
+====== Review: ======
+
+{{.\review.png?width=500}}
+
+1. Proved \bar{z} = 0
+2. Proved \var{z} = 1
+3. Proved Chebyshev
+	a. At least 1 - (1/k^2) of the distribution will lie within 2 s.d. of the mean
+4. Emperical Rule
+
+====== Extra ======
+
+=== Box Plot ===
+IQR = Inter-Quartile Range
+UQ = Upper-Quartile
+LQ = Lower-Quartile
+
+{{.\boxplot.png?width=500}}
