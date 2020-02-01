@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-01-27T10:30:15-06:00
+
+====== SLR ======
+Created Monday 27 January 2020
+
+Simple Linear Regression
+
+SLR= 
+* Simple
+	* 1 variable (1 **x**)
+	* As compared to multiple linear regression (MLR), where there are multiple x's
+* Linear
+	* Linear combination of **β **
+	* Linear model in those (not necessarily in x's)
+* Regression
+{{.\regression.png?width=500}}
+Important: **ε** is independent identically distributed (**iid**)
+* this is because sigma squared is constant (eg no i's attached)
+
+GUITAR TIME
+* I see a linear model
+* I see assumptions (ass-umpt-ions) in epsilon
+* Independent identically distributed
+* Normal Zero sigma squared
+
+"When we make estimates, we have to put the hat on"
+* puts on a cowboy hat
+
+
+
+E(y|x_{1}) = expected value of y given x_{1}
+Line = Trend = Regression
+Points don't actually exist on the line, it's just the expected value
+

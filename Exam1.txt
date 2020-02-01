@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-01-31T10:47:14-06:00
+
+====== Exam1 ======
+Created Friday 31 January 2020
+
+{{.\summary.png?width=600}}
+
+Bayes Calculation will be on Ex 1
+**testing problem**
+

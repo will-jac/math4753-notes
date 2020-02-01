@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-01-29T10:36:22-06:00
+
+====== Ch3-Probability ======
+Created Wednesday 29 January 2020
+
+Probability:
+and = ∩
+or = ∪
+given = |
+
+{{.\prob.png?width=500}}
+
+====== Bayes Rule ======
+
+{{.\bayes.png?width=500}}
+
+
+
+MSS, TSS, RSS
+{{.\tss-mss-rss-1.png?width=500}}
