@@ -20,3 +20,14 @@ given = |
 
 MSS, TSS, RSS
 {{.\tss-mss-rss-1.png?width=500}}
+
+==== Choosing a Model ====
+Strategies:
+* Genre specific model
+* General model (eg polynomial)
+* Piecewise regression (system of models)
+{{.\piecewise-regression.png?width=500}}
+We can also generalize this for any number of lines - each adds an indicator / adjustment factor
+
+
+
