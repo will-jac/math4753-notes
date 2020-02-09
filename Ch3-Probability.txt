@@ -12,8 +12,7 @@ given = |
 
 {{.\prob.png?width=500}}
 
-====== Bayes Rule ======
-
+===== Bayes Rule =====
 {{.\bayes.png?width=500}}
 
 
@@ -21,7 +20,7 @@ given = |
 MSS, TSS, RSS
 {{.\tss-mss-rss-1.png?width=500}}
 
-==== Choosing a Model ====
+===== Choosing a Model =====
 Strategies:
 * Genre specific model
 * General model (eg polynomial)
@@ -29,5 +28,14 @@ Strategies:
 {{.\piecewise-regression.png?width=500}}
 We can also generalize this for any number of lines - each adds an indicator / adjustment factor
 
+===== Null Hypothesis =====
+"Skeptic's Belief"
 
+Null hypothesis says 'there's nothing going on here, this is all just distributed normal'
+From our model, we can generate a p-value
+if p < 0.05, reject the null hypothesis and accept the model
+if p > 0.05, we cannot reject the null hypothesis
 
+We want a big p-value for ε ~ N(0, σ^{2})
+
+\beta
