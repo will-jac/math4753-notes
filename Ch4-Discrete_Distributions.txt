@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-02-10T10:44:18-06:00
+
+====== Ch4-Discrete Distributions ======
+Created Monday 10 February 2020
+
+Walton
+sample(c("H","T"), size=10, prob=c(1/2, 1/2), replace=TRUE)
+
+-> can map outcomes to whatever we want, eg:
+sample(c(1,0), size=10, prob=c(1/2, 1/2), replace=TRUE)
+
+-> can sum the outcome
+sum(sample(c(1,0), size=10, prob=c(1/2, 1/2), replace=TRUE))
+
+== Binomial (n trials) ==
+x = # of successes in the n trials
+H = Success
+h = 10, HHTTTHHTTH
+x = 5
+
+
+Need to master:
+dstem
+pstem
+qstem
+rstem
+
+
