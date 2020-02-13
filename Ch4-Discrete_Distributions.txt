@@ -28,3 +28,91 @@ qstem
 rstem
 
 
+====== Expected Values ======
+
+E(x) = Σ x_i p(x_i) (def)
+=> E(g(x)) = Σ g(x_i) p(x_i)
+**RULE 1:**
+E(c) = c
+proof:
+E(c) = Σ c p(x_i) = c Σ p(x_i) = c * 1 = c
+**RULE 2:**
+E(c x) = c E(x)
+proof:
+E(c x) = Σ c x_i p(x_i) = c Σ x_i p_i = c E(x)
+**RULE 3:**
+E(g_1(x) + ... + g_n(x)) = E(g_1(x)) + ... + E(g_n(x))
+proof:
+E(g_1(x) + ... + g_n(x)) = Σ [ (g_1(x) + ... + g_n(x)) p(x_i) ]
+	= Σ [ g_1(x) p(x_i) + ... + g_n(x) p(x_i) ]
+	= Σ [ g_1(x) p(x_i) ] + ... + Σ [ g_n(x) p(x_i) ]
+	= E(g_1(x)) + ... + E(g_n(x))
+
+===== Variance =====
+σ^2 = E((x - μ)^2) = Σ (x_i - μ)^2 p(x_i) (def)
+σ^2 = E(x^2) - μ^2
+proof:
+σ^2 = E((x - μ)^2) 
+	= E(x^2 - 2μx + μ^2)  
+	= E(x^2) - 2μ E(x) + μ^2
+	= E(x^2) - 2μ^2 + μ^2
+	= E(x^2) - μ^2
+QED
+
+note that expected value is a POPULATION value, not sample
+
+===== Moments =====
+E(x^1) = "first moment"
+E(x^2) = "second moment"
+   ...			...
+E(x^k) = "kth moment"
+
+===== Moment Generating Function (MGF) =====
+
+M_{x}(t) = E(e^{x t })
+
+==== MGF Theorem ====
+The kth moment (Expected value of x^k) is equal to the kth derivative of the MGF evaluated at t = 0
+E(x^k) = δ^k M_{x}(t) / δt^k | t=0
+
+
+====== Distributions ======
+
+==== Bernoulli ====
+Bernoulli == coin flip. Boolean.
+Let q = probability of 0, p = probability of 1
+
+X ~ Bern(p)
+E(x) = p
+V(x) = σ^2 = σ^{2}_{x} = pq
+
+Proof:
+E(x) = Σ x_i p(x_i) = 0*p(0) + 1*p(1) =  0*q + 1*p = p
+V(x) = Σ (x_i - p)^2 p(x_i) 
+	= (0-p)^2 p(0) + (1-p)^2 p(1) 
+	= p^2 * q + q^2 * p
+	= pq (p + q) = pq (1) = pq
+
+== MGF ==
+M_{x}(t) = E(e^(xt))
+	= Σ e^(xt) p(x_i)
+	= e^(0t) p(0) + e^(1t) p(1)
+	= 1 * q + e^t * p
+	= q + p e^t
+
+
+== MGF Theorem ==
+E(x) = d' M / d' t | t = 0
+	= p e^t | t=0
+	= p
+	
+==== Binomial Distribution ====
+
+n Bernoulli trials
+Two possible outcomes per trial of S or F
+p(s) = p and p(F), TODO
+p(y) = choose(n, y) p^y q^(n-y)
+
+μ = np
+σ = npq
+
