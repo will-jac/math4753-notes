@@ -1,0 +1,158 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-02-17T16:34:36-06:00
+
+====== Ch5-Continuous Random Variable ======
+Created Monday 17 February 2020
+
+1. x is continuous
+2. probability density function (pdf)
+p(x) = probability
+f(x) = probability density function -> density != probability
+Density = height in the curve
+Probability = area under the curve
+So, what's P(a <= x <= b) ?
+Let's use calculus:
+{{.\equation.png?type=equation}}
+
+===== Cumulative Distribution Function =====
+{{.\equation001.png?type=equation}}
+{{.\equation002.png?type=equation}}
+{{.\equation003.png?type=equation}}
+
+Therefore:
+P(a ≤ x ≤ b) = pnorm(b, mean, sd) - pnorm(a, mean, sd)
+
+This also implies that:
+P(x = a) = 0 		(because the width of any point is 0, so it's area is 0)
+P(x ≤ a) = P(x < a)		(implied by the above)
+P(x ≥ a) = P(x > a)
+
+AGAIN:
+**x is discrete**
+**y is continuous**
+P(X ≥ x) ≠ P(X > x)
+P(Y ≥ y) = P(Y > y)
+
+==== Doing it in R ====
+**Plotting a density:**
+{{{code: lang="r" linenumbers="True"
+curve(dnorm(x, mean=10, sd=5), 
+	xlim=(10 - 3*5,  10 + 3*5), 	# by the empirical rule
+	lwd=2, col="Purple")
+}}}
+
+
+**Shading and Calculating an area:**
+Create a polygon of basically line segments, then shade that in
+{{{code: lang="r" linenumbers="True"
+# This will generate a list of x values, and then calculate the corresponding y values
+xcurve = seq(a, b, length=1000)
+ycurve = dnorm(xcurve, mean, sd)
+# Shade the region
+polygon(c(a, xcurve, b), c(0, ycurve, 0), col="Red")
+# Calculate the area
+Area = pnorm(b, mean, sd) - pnorm(a, mean, sd)
+}}}
+
+
+**Plotting an area on two ploting surfaces**
+{{{code: lang="r" linenumbers="True"
+text((a_b)/2, 0.5*Ymax, paste0("Area=", Area))
+# For experimenting with the x, y locations - NOT in RMarkdown
+text(locator(1), paste0("Area=",Area))
+}}}
+
+
+==== Expected Values ====
+{{.\equation004.png?type=equation}}
+Same rules hold:
+E(c) = c
+E(cY) = cE(Y)
+E(g(Y) + ... + g(Y)) = E(g(Y)) + ... + E(g(Y))
+
+==== Variance ====
+same thing
+{{.\equation005.png?type=equation}}
+
+== Theorem ==
+V(cY) = c^2 V(Y)
+V(c+Y) = V(Y)
+
+x is a continuous random variable (crv)
+y = ax+b,  a,b ∈ R (real numbers)
+E(y) = E(ax+b)
+	= E(ax)+E(b)
+	= aE(x)+b
+μ_{y} = aμ_{x} + b
+V(y) = V(ax+b)
+	= E((y - μ_{y})^{2})
+	= E((ax+b - aμ_{x}+b)^{2}) 
+	= E((ax-aμ_{x})^{2})
+	= a^{2 }E((x-μ_{x})^{2})
+	= a^{2 }V(x)
+σ_{y}^{2} = a^{2}σ^{2}x
+
+=>
+if y = ax+b
+then:
+E(y) = aE(x)+b
+V(y) = a^{2}V(x)
+
+**aside:**
+σ_{y}^{2} = E((y - μ_{y})^{2}) = E((y - E(y))^{2})
+
+**Example:**
+Y ~ N(μ=10, σ=5)
+E = 2Y+8
+E(D) = 2E(Y)+8 = 2*10+8 = 28
+V(D) = 2^{2}V(Y) = 4*(5^{2}) = 4*25 = 100
+
+
+===== Uniform Probability Distribution =====
+{{.\equation006.png?type=equation}}
+{{.\equation007.png?type=equation}}
+
+
+===== MGF Results =====
+Motivatioin: If X ~ N(μ,σ^2), then Y~?, when Y =aX+b.
+
+M_{x}(t) = E(e^{xt})
+{{.\equation008.png?type=equation}}
+The last step is because e^{bt} is NOT a random value, it's a constant - x is the only rand var
+{{.\equation009.png?type=equation}}
+When y = ax+b
+Since x ~ N(μ, σ^{2}), from the book, we know that M_{x}(t) is:
+{{.\equation010.png?type=equation}}
+Compare with M_{x}(t):
+{{.\equation011.png?type=equation}}
+Hm, that looks a lot like the a normal
+Let's look at the expected values:
+{{.\equation012.png?type=equation}}
+
+Therefore::
+Y = aX+b
+x ~ N(μ , σ^{2})
+y ~ N(aμ_{x }, a^{2}σ^{2})
+So Y is normal.
+
+===== Z-score =====
+
+Recall that in the sample space:
+{{.\equation013.png?type=equation}}
+
+Now, for the population:
+{{.\equation014.png?type=equation}}
+Because Z has the form ax+b
+{{.\equation015.png?type=equation}}
+Therefore, we've derived the same result for the population!
+{{.\equation016.png?type=equation}}
+(assuming the population of X ~ N(μ, σ) )
+
+====== Normal (Gaussian) Distribution ======
+MGF:
+
+Z = (y - μ) / σ
+E(Z) = 0
+V(Z) = 1
+

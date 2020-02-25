@@ -10,3 +10,12 @@ Created Friday 31 January 2020
 Bayes Calculation will be on Ex 1
 **testing problem**
 
+
+
+SEE PAGE ON CANVAS!!!!!!!
+
+Prove:
+E(ax+b) = aE(X) + b
+V(ax+b) = a^2 V(x)
+
+Santa = satan

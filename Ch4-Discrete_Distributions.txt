@@ -48,6 +48,7 @@ E(g_1(x) + ... + g_n(x)) = Σ [ (g_1(x) + ... + g_n(x)) p(x_i) ]
 	= Σ [ g_1(x) p(x_i) ] + ... + Σ [ g_n(x) p(x_i) ]
 	= E(g_1(x)) + ... + E(g_n(x))
 
+
 ===== Variance =====
 σ^2 = E((x - μ)^2) = Σ (x_i - μ)^2 p(x_i) (def)
 σ^2 = E(x^2) - μ^2
@@ -93,6 +94,7 @@ V(x) = Σ (x_i - p)^2 p(x_i)
 	= p^2 * q + q^2 * p
 	= pq (p + q) = pq (1) = pq
 
+
 == MGF ==
 M_{x}(t) = E(e^(xt))
 	= Σ e^(xt) p(x_i)
@@ -106,13 +108,16 @@ E(x) = d' M / d' t | t = 0
 	= p e^t | t=0
 	= p
 	
+
 ==== Binomial Distribution ====
 
 n Bernoulli trials
-Two possible outcomes per trial of S or F
-p(s) = p and p(F), TODO
-p(y) = choose(n, y) p^y q^(n-y)
+Two possible outcomes per trial (S or F)
+p(S) = p and p(F) = q, p+q=1, for each bernoulli trial
+Trials are independent
+Y is the number of successes in n trials
+p(y) = choose(n, y) p^y q^(n-y), y = 0,1,2, ... , n
 
 μ = np
-σ = npq
+σ^2 = npq
 
